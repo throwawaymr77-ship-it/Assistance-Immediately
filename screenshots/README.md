@@ -8,7 +8,7 @@
 Overview of total tickets, in progress, resolved, overdue counts, weekly stats, SLA compliance, recent tickets table, and tickets by type distribution.
 
 ### Ticket Detail
-![Ticket Detail](Screenshot from 2026-05-03 12-37-53.png)
+![Ticket Detail](tickets.png)
 
 Full ticket view showing ticket number, status, priority badges, description, comments section with internal note option, and sidebar with details and assignment panels.
 
