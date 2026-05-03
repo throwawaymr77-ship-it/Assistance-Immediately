@@ -11,15 +11,18 @@ const SLAManagement = () => {
     name: '', description: '', priority: '3', response_time_hours: 4, resolution_time_hours: 24
   });
 
-  const { data: policies, isLoading } = useQuery({
+  const { data: policiesData, isLoading } = useQuery({
     queryKey: ['sla-policies'],
     queryFn: () => slaAPI.listPolicies().then(r => r.data),
   });
 
-  const { data: records } = useQuery({
+  const { data: recordsData } = useQuery({
     queryKey: ['sla-records'],
     queryFn: () => slaAPI.listRecords().then(r => r.data),
   });
+
+  const policies = policiesData?.results || policiesData || [];
+  const records = recordsData?.results || recordsData || [];
 
   const createMutation = useMutation({
     mutationFn: (data) => slaAPI.createPolicy(data),
